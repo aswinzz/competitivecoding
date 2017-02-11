@@ -1,0 +1,45 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main()
+{
+  int n,i,j,a[10000],num,q,no,freq,flag=0,f[10000];
+  cin>>n;
+  for(i=0;i<n;i++)
+  {
+  cin>>a[i];
+  num=a[i];
+  f[num]++;
+  }
+  cin>>q;
+  for(j=0;j<q;j++)
+  {
+  flag=0;
+  cin>>no>>freq;
+  if(no==0)
+  {
+   for(i=0;i<n;i++)
+   {
+   if(freq<=f[a[i]])
+   {
+   cout<<a[i]<<"\n";
+   flag=-1;
+   break;
+   }
+   }
+  }
+  if(no==1)
+  {
+   for(i=0;i<n;i++)
+   {
+   if(freq==f[a[i]])
+   {
+   cout<<a[i]<<"\n";
+   flag=-1;
+   break;
+   }
+   }
+  }
+  if(flag==0)
+  cout<<flag<<"\n";
+  }
+}
